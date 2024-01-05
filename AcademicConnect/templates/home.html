@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Connect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #ADD8E6;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .buy-sell-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .buy-sell-card {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .buy-sell-card h2 {
+            color: #333;
+        }
+
+        .buy-sell-card p {
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Academic Connect</h1>
+        <p>Buy and Sell Used Books for a Smarter Academic Journey</p>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>
+            Academic Connect is your go-to platform for buying and selling used academic books.
+            Whether you're a student looking to save on textbooks or eager to pass on knowledge to others,
+            Academic Connect brings students together to make the exchange of study materials simple and affordable.
+        </p>
+
+        <div class="buy-sell-container">
+            <div class="buy-sell-card">
+                <h2>Buy Books</h2>
+                <p>Explore a wide range of used textbooks at affordable prices. Find the books you need for your next semester.</p>
+            </div>
+            <div class="buy-sell-card">
+                <h2>Sell Books</h2>
+                <p>Turn your old textbooks into cash by selling them to fellow students. Help others while making some extra money.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2023 Academic Connect. All rights reserved.
+    </footer>
+
+</body>
+</html>
+
+{% endblock %}

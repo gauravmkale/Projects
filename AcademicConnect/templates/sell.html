@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    SELL
+{% endblock %}
+
+{% block main %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Resource Form</title>
+    <link href="/static/styles2.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Share your academic resources</h1>
+    <div class="bo">
+    <form action="#" method="post" enctype="multipart/form-data">
+        <label for="year">Year:</label>
+        <select id="year" name="year">
+            <option value="1">First Year</option>
+            <option value="2">Second Year</option>
+            <option value="3">Third Year</option>
+            <option value="4">Fourth Year</option>
+        </select>
+
+        <label for="branch">Branch:</label>
+        <select id="branch" name="branch">
+            <option value="Cmputer">Computer Science</option>
+            <option value="Electrical">Electrical Engineering</option>
+            <option value="Mechanical">Mechanical Engineering</option>
+            <option value="Electronics">Electronics Engineering</option>
+            <option value="Production">Production Engineering</option>
+            <option value="Civil">Civil Engineering</option>
+        </select>
+        <label for="resourceType">Resource Type:</label>
+        <input type="text" id="resourceType" name="resourcetype" required>
+        <label for="bookName">Book Name/ Resource Name:</label>
+        <input type="text" id="bookName" name="bookname" required>
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" required>
+        <label for="number">Phone Number:</label>
+        <input type="number" id="number" name="number" required>
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+
+</body>
+</html>
+{% endblock %}

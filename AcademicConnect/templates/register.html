@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" name="register" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" autofocus type="text" name="username" placeholder="Username">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto"  type="password" name="password" placeholder="Password">
+        </div>
+
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" type="password" name="confirmation" placeholder="Confirm Password">
+        </div>
+
+        <div class="mb-3">
+            <label for="year">Year:</label>
+            <select id="year" name="year">
+                <option value="1">First Year</option>
+                <option value="2">Second Year</option>
+                <option value="3">Third Year</option>
+                <option value="4">Fourth Year</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="branch">Branch:</label>
+            <select id="branch" name="branch">
+                <option value="Computer Science">Computer Science</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Electronics Engineering">Electronics Engineering</option>
+                <option value="Production Engineering">Production Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+            </select>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary" name="register">Register</button>
+    </form>
+{% endblock %}

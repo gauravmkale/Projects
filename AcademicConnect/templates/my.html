@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Books
+{% endblock %}
+
+{% block main %}
+    <h1 class="text-center">My Books</h1>
+
+    <div class="container" style="max-width: 500px;">
+        <div class="row">
+            {% for book in user_books %}
+                <div class="col-md-6">
+                    <div class="book-container">
+                        <h4 class="text-center">{{ book.bookname }}</h4>
+                        <img src="{{ book[7] }}" alt="Book Photo" class="book-photo" onclick="toggleInfo('{{ loop.index }}')">
+                        <div id="info{{ loop.index }}" class="book-info" style="display: none;">
+                            <p>Year: {% if book[1] %}{{ book[1] }}{% else %}Not specified{% endif %}</p>
+                            <p>Branch: {{ book[2] }}, ResourceType: {{ book[3] }}</p>
+                            <p>Price: ${{ book[5] }}</p>
+                            <p>Number of Copies: {{ book[6] }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {% if loop.index % 2 == 0 or loop.last %}
+                    <div class="w-100"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        function toggleInfo(index) {
+            var infoDiv = document.getElementById('info' + index);
+            infoDiv.style.display = infoDiv.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+{% endblock %}

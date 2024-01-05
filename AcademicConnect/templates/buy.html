@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    BUY
+{% endblock %}
+
+{% block main %}
+
+<style>
+    table {
+        margin: auto;
+        border-spacing: 50px;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+
+    .image-container {
+        height: 200px; /* Adjust as needed */
+        overflow: hidden;
+    }
+
+    .info-div {
+        position: absolute;
+    }
+</style>
+
+<h1>Available Books for Purchase</h1>
+
+<table>
+    {% for book in books %}
+        {% if loop.index % 3 == 1 %}
+            <tr>
+        {% endif %}
+
+        <td>
+            <div name="info-div" style="text-align: center;">
+                <h4>{{ book[4] }}</h4>
+                <img src="{{ book[7] }}" alt="Book Photo" style="max-width: 200px; max-height: 200px; cursor: pointer;" onclick="toggleInfo('{{ loop.index }}')">
+            </div>
+            <div id="info{{ loop.index }}" style="display: none;">
+                <p>Year: {% if book[1] %}{{ book[1] }}{% else %}Not specified{% endif %}</p>
+                <p>Branch: {{ book[2] }}, ResourceType: {{ book[3] }}</p>
+                <p>Price: ${{ book[5] }}</p>
+                <p>Number of Copies: {{ book[6] }}</p>
+            </div>
+        </td>
+
+        {% if loop.index % 3 == 0 or loop.last %}
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+
+<script>
+    function toggleInfo(index) {
+        var infoDiv = document.getElementById('info' + index);
+        infoDiv.style.display = infoDiv.style.display === 'none' ? 'block' : 'none';
+    }
+</script>
+
+{% endblock %}

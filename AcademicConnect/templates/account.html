@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+<div class="card" style="text-align: center">
+    <div class="card-header" id="text-start">
+        Account
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">User Credentials</h5>
+        <p class="fw-bold" style='margin: 0'>{{username}}</p>
+        <p class="fw-lighter text-muted" >USERNAME</p>
+        <p class="fw-bold" style='margin: 0'>YEAR:{{year}}</p>
+        <p class="fw-bold" style='margin: 0'>BRANCH:{{branch}}</p>
+        <a href="/password" class="btn btn-primary">Change password</a>
+    </div>
+</div>
+
+{% endblock %}

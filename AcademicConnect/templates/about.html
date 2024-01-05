@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    ABOUT US
+{% endblock %}
+
+{% block main %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Academic Connect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>About Us - Academic Connect</h1>
+    </header>
+
+    <section>
+        <h2>Our Mission</h2>
+        <p>
+            At Academic Connect, we are on a mission to create a community-driven platform that simplifies the buying and selling of used academic books.
+            We believe in fostering a collaborative environment among students to make educational resources more accessible and affordable.
+        </p>
+
+        <h2>Our Vision</h2>
+        <p>
+            Our vision is to build a sustainable ecosystem where students can seamlessly exchange knowledge by trading used textbooks.
+            Through Academic Connect, we aim to reduce the financial burden on students while promoting the idea of reusing educational materials.
+        </p>
+
+        <h2>Meet the Team</h2>
+        <p>
+            Academic Connect is powered by a passionate team dedicated to making a positive impact on the academic journey of students.
+            We are committed to providing a user-friendly platform that enhances the overall learning experience.
+        </p>
+    </section>
+
+    <footer>
+        &copy; 2023 Academic Connect. All rights reserved.
+    </footer>
+
+</body>
+</html>
+
+{% endblock %}
