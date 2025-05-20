@@ -27,6 +27,46 @@ cur = con.cursor()
 con.row_factory = sqlite3.Row
 
 
+# Create users table
+cur.execute('''
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE,
+    hash TEXT NOT NULL,
+    year TEXT NOT NULL,
+    branch TEXT NOT NULL
+)
+''')
+
+# Create resources table
+cur.execute('''
+CREATE TABLE IF NOT EXISTS resources (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    year TEXT NOT NULL,
+    branch TEXT NOT NULL,
+    resourcetype TEXT NOT NULL,
+    bookname TEXT NOT NULL,
+    price REAL NOT NULL,
+    number TEXT NOT NULL,
+    photo TEXT,
+    user_id INTEGER NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+)
+''')
+
+# Create feedback table
+cur.execute('''
+CREATE TABLE IF NOT EXISTS feedback (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    message TEXT NOT NULL
+)
+''')
+
+con.commit()
+con.close()
+
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
