@@ -1,6 +1,6 @@
 async function getRecommendations() {
   const title = document.getElementById("movieInput").value;
-  const response = await fetch(`https://<your-backend-url>.onrender.com/recommend?title=${title}`);
+  const response = await fetch(`https://movies-7af7.onrender.com/recommend?title=${title}`);
   const data = await response.json();
   let html = "";
 
