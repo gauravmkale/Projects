@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "AcademicConnect/app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "AcademicConnect/app.py"
+    }
+  ]
+}
